@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chmod +x /usr/bin/run
-
 # allow connections from other containers
 echo "bind-address = 0.0.0.0" >> /etc/mysql/my.cnf
 
