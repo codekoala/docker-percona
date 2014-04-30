@@ -9,7 +9,7 @@ if [[ ! -e ${DATA_DIR}/ibdata1 ]]; then
   chown -R mysql:mysql ${DATA_DIR} &> /dev/null
 
   # allow root to login from remote systems
-  /bin/bash -c "sleep 5; echo GRANT ALL ON *.* TO root@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES | mysql" &
+  /bin/bash -c "sleep 5; echo \"GRANT ALL ON *.* TO root@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES\" | mysql" &
 fi
 
 su - mysql -s /bin/sh -c "/usr/bin/mysqld"
